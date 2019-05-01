@@ -22,3 +22,30 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+
+# def calprint(themonth, theyear):
+#   m = themonth
+#   y = theyear
+#   print(calendar.month(y, m))
+
+today = datetime.today()
+thisyear = today.year
+thismonth = today.month
+
+if __name__ == "__main__":
+  if len(sys.argv) == 1:
+      print(calendar.month(thisyear, thismonth))
+  
+  if len(sys.argv) == 2:
+    
+    m = int(sys.argv[1])
+    print(calendar.month(thisyear, m))
+  if len(sys.argv) == 3:
+    m = int(sys.argv[1])
+    y = int(sys.argv[2])
+    print(calendar.month(y, m))
+  if len(sys.argv) > 3:
+    print("Run the program from CLI with the format: `python calendar.py month [year]`")
+  
